@@ -1,0 +1,98 @@
+body, html {
+  margin: 0; padding: 0; height: 100%;
+  font-family: 'Courier New', Courier, monospace;
+  overflow: hidden;
+
+  
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#overlay {
+  position: fixed;
+  inset: 0;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #00ff00;
+  font-size: 24px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: opacity 2s ease;
+  z-index: 10;
+}
+
+#overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.terminal {
+  color: #00ff00;
+  background-color: #000;
+  border: 1px solid #00ff00;
+  padding: 20px;
+  width: 320px;
+  height: auto;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 2s ease;
+
+ 
+}
+
+.terminal.visible {
+  opacity: 1;
+}
+
+h1 {
+  margin-top: 0;
+  font-weight: normal;
+  font-size: 24px;
+}
+
+.links {
+  list-style: none;
+  padding-left: 0;
+}
+
+.links li {
+  margin: 10px 0;
+}
+
+.links a {
+  color: #00ff00;
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+
+@keyframes blink {
+  50% { background-color: transparent; }
+}
+#background-gif {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+  
+  filter: brightness(0.1); /* затемняет изображение до 60% яркости */
+}
+
+
+
+
+
+
